@@ -17,6 +17,10 @@ header h1 {
     background-color: #293359;
     color: white;
     padding: 5px;
+    padding-left: 0;
+}
+.line-body {
+    align-content: center;
 }
 .path-stops {
     margin: 5px;
@@ -40,12 +44,7 @@ a {
     margin: 10px;
     border: 2px #293559 solid;
     border-radius: 5px;
-}
-.line-short {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 48px;
-    display: inline-block;
+    vertical-align: top;
 }
 .stop {
     font-size: 10px;
@@ -60,9 +59,17 @@ a {
     border: 2px #ce1d41 solid;
     border-radius: 5px;
     margin: 5px;
+    vertical-align: top;
 }
 
-@media screen and (max-device-width: 1080px) {
+@media handheld {
+    .line-short {
+        left: 0;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 26px;
+        display: inline-flex;
+    }
     .line {
         width: 100%;
         display: block;
@@ -87,6 +94,7 @@ a {
         margin-left: 0;
         margin-right: 0;
         margin-top: 10px;
+        display: inline-block;
     }
     .path-header {
         font-size: 18px;
@@ -101,10 +109,23 @@ a {
         font-size: 14px;
     }
 }
-@media screen and (min-device-width: 1080px) {
-    .line {
-        width: 30vw;
+@media screen
+and (min-width: 600px)
+and (max-width: 1099px)
+{
+    .path {
+        width: 40vw;
+        display: inline-block;
+    }
+}
+@media screen and (min-width: 1100px) {
+    .path {
+        width: 21.5vw;
         display: inline-block;
         top: 0
+    }
+    .line {
+        width: 46vw;
+        display: inline-table;
     }
 }
