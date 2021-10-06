@@ -5,127 +5,243 @@ header {
     background-color: #ce1d41;
     margin: 0;
     width: 100vw;
+    box-shadow: #ce1d41 -10px 10px 10px 0px;
+}
+footer {
+    width: 97%;
+    padding: 10px;
 }
 header h1 {
     padding: 10px;
-    color: white
+    color: white;
+    margin: 0;
+    display: inline-block;
+}
+header h2 {
+    display: inline;
+    color: white;
+    font-size: 12px;
+    vertical-align: center;
 }
 .stop-id {
+    color: #ce1d41;
+}
+.mins {
     color: #ce1d41;
 }
 .line-header {
     background-color: #293359;
     color: white;
-    padding: 5px;
+    padding: .3em;
     padding-left: 0;
+
 }
 .line-body {
     align-content: center;
 }
 .path-stops {
-    margin: 5px;
+    margin: .3em ;
 }
 body {
     overflow-x: hidden;
     margin: 0;
     color: #293559;
     font-family: "Ubuntu";
+    width: 100vw;
 }
 .line-short {
     border-radius: 5px;
-    padding: 3px;
-    margin: 3px;
+    padding: .1em;
+    margin: .1em;
 }
 a {
     color: #293559;
     text-decoration: none;
 }
 .line {
-    margin: 10px;
-    border: 2px #293559 solid;
-    border-radius: 5px;
+    margin-top: .5em;
+    /*border: 2px #293559 solid;
+    border-radius: 5px;*/
     vertical-align: top;
 }
 .stop {
-    font-size: 10px;
+    font-size: .8em;
     font-family: "Ubuntu", sans-serif;
 }
 .path-header {
     background-color: #ce1d41;
     color: white;
-    padding: 3px;
+    padding: .3em;
 }
 .path {
-    border: 2px #ce1d41 solid;
-    border-radius: 5px;
-    margin: 5px;
+    /*border: 2px #ce1d41 solid;
+    border-radius: 5px;*/
+    margin-top: .3em;
     vertical-align: top;
 }
 
-@media handheld {
-    .line-short {
-        left: 0;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        font-size: 26px;
-        display: inline-flex;
+.path-stops {
+    display: none;
+}
+.path:hover .path-stops {
+    display: block;
+}
+
+.path-box {
+    margin: 0;
+    padding: 0;
+}
+
+.line-box {
+    margin: 0;
+    padding: 0;
+}
+
+
+@media (orientation: portrait) and (-webkit-min-device-pixel-ratio: 3) {
+    .stop {
+        font-size: 18px;
     }
-    .line {
-        width: 100%;
-        display: block;
-        margin-left: 0;
-        margin-right: 0;
-        margin-bottom: 20px;
-        padding-left: 0;
-        padding-right: 0;
-    }
-    header h1{
-        font-size: 120px;
+    header {
+        font-size: 3em;
+        width: 100vw;
     }
     .line-header {
-        font-size: 28px;
+        font-size: 5em !important;
+        text-align: center;
+        border-radius: 30px !important;
     }
-    .main {
+    .line-box{
         width: 100vw;
         margin: 0;
         padding: 0;
-    }
-    .path {
-        margin-left: 0;
-        margin-right: 0;
-        margin-top: 10px;
-        display: inline-block;
-    }
-    .path-header {
-        font-size: 18px;
-    }
-    .path .path-stops {
-        display: none
-    }
-    .path:hover .path-stops {
-        display: block;
-    }
-    .stop {
-        font-size: 14px;
-    }
-}
-@media screen
-and (min-width: 600px)
-and (max-width: 1099px)
-{
-    .path {
-        width: 40vw;
-        display: inline-block;
-    }
-}
-@media screen and (min-width: 1100px) {
-    .path {
-        width: 21.5vw;
-        display: inline-block;
-        top: 0
+        height: fit-content;
     }
     .line {
-        width: 46vw;
-        display: inline-table;
+        padding: 0;
+        margin-top: 10px;
+        height: fit-content;
+        border-radius: 30px !important;
+    }
+    .path-stops, .stop, .path, .path-header, .path-box, .line-body {
+        display: none;
+        padding: 0 !important
+    }
+    .line-header {
+        font-size: 1.2em;
+        overflow-x: hidden;
+        height: 3em;
+    }
+    .path-header {
+        font-size: 1.1em;
     }
 }
+@media (orientation: portrait) and (-webkit-max-device-pixel-ratio: 2) {
+    .line-box, .line, body {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+    }
+    .path-stops, .stop, .path, .path-header, .path-box, .line-body {
+        display: none;
+        padding: 0 !important;
+    }
+    .line {
+        margin-top: 10px;
+    }
+}
+/*@media (orientation: landscape)
+{*/
+    main {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+        justify-content: space-evenly;
+        -ms-flex-wrap: wrap;
+        -ms-flex-direction: row;
+    }
+    header {
+        margin-bottom: 10px;
+    }
+    .line-box {
+        padding: 0;
+        max-width: 100vw;
+    }
+    .line {
+        border: 2px solid #293359;
+        border-radius: 5px;
+        padding: 0;
+    }
+    .line-header {
+        margin: 0;
+        font-size: 20px;
+        height: fit-content;
+        padding-left: 5px
+    }
+    .line-header h2 {
+        height: fit-content;
+        padding: 0;
+        margin: 0;
+        font-size: inherit;
+    }
+    .path {
+        border: 2px solid #ce1d41;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+        margin-top: 0;
+        height: 100%;
+    }
+    .path-box {
+        display: inline-block;
+        top: 0;
+        vertical-align: top;
+        padding-bottom: 4px;
+        flex: 1
+    }
+    .path-stops {
+        display: block
+    }
+    .line-body {
+        display: flex;
+        align-items: stretch;
+        flex-direction: row;
+        flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+    }
+/*}
+@media screen
+    and (max-width: 800px) {
+        .line-box {
+            display: block;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .line {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            border-radius: 0;
+        }
+        .path-box {
+            margin: 0;
+            padding: 0;
+            width: 49vw; 
+            flex: 1;
+        }
+        .path {
+            margin: 0;
+            border-radius: 0;
+            width: 100%;
+            display: inline-block;
+            height: inherit;
+            
+        }
+        .line-body {
+            width: 100vw;
+            display: flex;
+        }
+    }
+*/
